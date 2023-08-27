@@ -2,17 +2,9 @@
 
 namespace App\Http\Controllers\Cart;
 
-use App\Domains\Cart\Exports\CartExport;
-use Maatwebsite\Excel\Facades\Excel;
-use App\Domains\Cart\Helpers\CartDTO;
-use App\Domains\Cart\Helpers\ValidatedCartDTO;
-use App\Domains\Cart\Helpers\ValidatedDestroyCartDTO;
-use App\Domains\Cart\Services\CartService;
-use App\Domains\User\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Cart;
-use App\Models\Product;
 use App\Models\ProductGroupItem;
 use App\Models\UserProductGroup;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +17,7 @@ class CartController extends Controller
     {
         $this->cart = $cart;
     }
-    
+
     public function add(Request $request)
     {
         $request->validate([

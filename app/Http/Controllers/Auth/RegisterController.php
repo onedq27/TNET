@@ -23,7 +23,6 @@ class RegisterController extends Controller
             'password'      => 'required|string',
             'email'         => 'required|email',
         ]);
-// return $request;
         $user = User::create([
             'name' => $request->name,
             'mobile' => $request->mobile,
